@@ -1,0 +1,7 @@
+C:\Programming\csharppt9-aula1\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.exe.config
+C:\Programming\csharppt9-aula1\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.exe
+C:\Programming\csharppt9-aula1\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.pdb
+C:\Programming\csharppt9-aula1\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.csprojAssemblyReference.cache
+C:\Programming\csharppt9-aula1\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.csproj.CoreCompileInputs.cache
+C:\Programming\csharppt9-aula1\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.exe
+C:\Programming\csharppt9-aula1\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.pdb
