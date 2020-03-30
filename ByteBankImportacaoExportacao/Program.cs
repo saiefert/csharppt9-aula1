@@ -8,30 +8,43 @@ using System.IO;
 
 namespace ByteBankImportacaoExportacao
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            var enderecoDoArquivo = "contas.txt";
-
-            var fluxoDoArquivo = new FileStream(enderecoDoArquivo, FileMode.Open);
-
-            var buffer = new byte[1024];
-            var numeroDeBytesLidos = -1;
-
-            while (numeroDeBytesLidos != 0)
-            {
-                numeroDeBytesLidos = fluxoDoArquivo.Read(buffer, 0, 1024);
-                EscreverBuffer(buffer);
-            }
-
+            CriarArquivoComWriter();
+            Console.WriteLine("Contas Exportadas...");
             Console.ReadLine();
         }
 
-        static void EscreverBuffer(byte[] buffer)
+        static ContaCorrente ConverterStringParaContaCorrente(string linha)
+        {
+            string[] campos = linha.Split(',');
+
+            var agencia = campos[0];
+            var numero = campos[1];
+            var saldo = campos[2].Replace('.', ',');
+            var nomeTitular = campos[3];
+
+            var agenciaComoInt = int.Parse(agencia);
+            var numeroComoInt = int.Parse(numero);
+
+            var saldoComoDouble = double.Parse(saldo);
+
+            var titular = new Cliente();
+            titular.Nome = nomeTitular;
+
+            var resultado = new ContaCorrente(agenciaComoInt, numeroComoInt);
+            resultado.Depositar(saldoComoDouble);
+            resultado.Titular = titular;
+
+            return resultado;
+        }
+
+        static void EscreverBuffer(byte[] buffer, int bytesLidos)
         {
             var utf8 = Encoding.Default;
-            var texto = utf8.GetString(buffer);
+            var texto = utf8.GetString(buffer, 0, bytesLidos);
             Console.Write(texto);
 
             //foreach (var meuByte in buffer)
